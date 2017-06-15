@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>FCC: Tic Tac Toe Game</title>
+	<link rel="stylesheet" type="text/css" href="sass/style.css">
+	
+	<title></title>
+</head>
+<body>
+	<h1>FCC: Tic Tac Toe Game</h1>
+
+	<div id="welcome">
+		<h3>Welcome to the Tic Tac Toe Game!</h3>
+		<h2>Please choose your character:</h2>
+		<div id="chars">
+			<div class="red char">O</div>
+			<div class="gray char">X</div>
+		</div>
+	</div>
+
+	<div id="gameboard" class="hidden">
+
+		<div id="scores">
+			<p id="computer">computer<br><span>0</span></p>
+			<p id="ties">ties<br><span>0</span></p>
+			<p id="player">player <br><span>0</span></p>
+		</div>
+
+		<p id="message"> Your turn!</p>
+
+		<div id="board">
+			<div class="cell" id="cell-7"></div>
+			<div class="cell" id="cell-8"></div>
+			<div class="cell" id="cell-9"></div>
+			<div class="cell" id="cell-4"></div>
+			<div class="cell" id="cell-5"></div>
+			<div class="cell" id="cell-6"></div>
+			<div class="cell" id="cell-1"></div>
+			<div class="cell" id="cell-2"></div>
+			<div class="cell" id="cell-3"></div>	
+		</div>
+	</div>
+
+	<div id="pagain" class="hidden">
+		<h2>Do you want to play again?</h2>
+		<div id="yes-no">
+			<div class="answers" id="yes">Yes</div>
+			<div class="answers" id="no">No</div>
+		</div>
+	</div>
+
+	
+	<footer><p>made by <a href="http://mar-bi.github.io" target="_blank">mar-bi</a> &copy; 2017</p></footer>
+
+	<script type="text/javascript" src="js/jquery-3.2.0.js"></script>
+	<script type="text/javascript" src="js/tictac.js"></script>
+</body>
+</html>

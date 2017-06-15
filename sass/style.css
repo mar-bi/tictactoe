@@ -1,0 +1,171 @@
+body {
+  font-family: Helvetica, sans-serif; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+h1 {
+  text-align: center;
+  font-size: 2em;
+  padding: 5px; }
+  @media screen and (max-width: 420px) {
+    h1 {
+      font-size: 1.5em;
+      margin: 5px 0; } }
+
+footer {
+  clear: left; }
+  footer p {
+    text-align: center; }
+    @media screen and (max-width: 420px) {
+      footer p {
+        margin: 3px 0;
+        font-size: 0.8em; } }
+
+#welcome, #pagain, #gameboard {
+  width: 400px;
+  margin: 1em auto;
+  padding: 10px;
+  background-color: #d9d3dd;
+  border-color: #f3f2f7;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px;
+  border-top-color: #f3f2f7;
+  border-right-color: #d9d3dd;
+  border-bottom-color: #d9d3dd;
+  border-left-color: #f3f2f7;
+  box-shadow: 5px 5px 3px #616161; }
+  @media screen and (max-width: 420px) {
+    #welcome, #pagain, #gameboard {
+      width: 280px;
+      margin: 5px auto; } }
+
+#welcome, #pagain {
+  height: 200px; }
+  #welcome h2, #pagain h2 {
+    text-align: center;
+    font-size: 1.5em;
+    color: #2d9922; }
+    @media screen and (max-width: 420px) {
+      #welcome h2, #pagain h2 {
+        font-size: 1.2em; } }
+  #welcome h3, #pagain h3 {
+    text-align: center;
+    font-size: 1.2em; }
+    @media screen and (max-width: 420px) {
+      #welcome h3, #pagain h3 {
+        font-size: 1em; } }
+  #welcome #chars, #pagain #chars {
+    width: 200px;
+    height: 80px;
+    margin: 1em auto; }
+
+#gameboard {
+  background: #d9d3dd;
+  /* For browsers that do not support gradients */
+  background: -webkit-radial-gradient(circle, #f3f2f7, #d9d3dd);
+  /* Safari */
+  background: -o-radial-gradient(circle, #f3f2f7, #d9d3dd);
+  /* Opera 11.6 to 12.0 */
+  background: -moz-radial-gradient(circle, #f3f2f7, #d9d3dd);
+  /* Firefox 3.6 to 15 */
+  background: radial-gradient(circle, #f3f2f7, #d9d3dd);
+  /* Standard syntax */ }
+
+#scores {
+  width: 80%;
+  margin: 0 auto; }
+  #scores p {
+    display: inline-block;
+    width: 29%;
+    margin: 5px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-transform: capitalize; }
+    @media screen and (max-width: 420px) {
+      #scores p {
+        font-size: 1em;
+        width: 27%; } }
+
+#message {
+  margin: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  color: #39c32b; }
+
+#board {
+  width: 80%;
+  height: 285px;
+  margin: 1.5em auto; }
+  @media screen and (max-width: 420px) {
+    #board {
+      height: 230px; } }
+  #board .cell {
+    width: 31%;
+    height: 90px;
+    float: left;
+    border-color: #474747;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 0; }
+    @media screen and (max-width: 420px) {
+      #board .cell {
+        width: 29%;
+        height: 70px; } }
+  #board #cell-7, #board #cell-8, #board #cell-9 {
+    border-top-style: none; }
+  #board #cell-1, #board #cell-2, #board #cell-3 {
+    border-bottom-style: none; }
+  #board #cell-1, #board #cell-4, #board #cell-7 {
+    border-left-style: none; }
+  #board #cell-3, #board #cell-6, #board #cell-9 {
+    border-right-style: none; }
+
+.red, .gray {
+  font-size: 5em;
+  line-height: 1;
+  font-weight: bold;
+  color: #ce2635;
+  text-align: center;
+  margin: 0 auto; }
+  @media screen and (max-width: 420px) {
+    .red, .gray {
+      font-size: 4em; } }
+
+.gray {
+  color: #424146; }
+
+.hidden {
+  display: none; }
+
+.char {
+  width: 35%;
+  float: left;
+  margin: 0 15px;
+  font-size: 3em;
+  cursor: pointer; }
+  .char:hover {
+    color: #2d9922; }
+
+#pagain {
+  height: 150px; }
+  #pagain .answers {
+    display: inline-block;
+    width: 49%;
+    text-align: center;
+    font-size: 2em;
+    font-weight: bold;
+    color: #424146;
+    cursor: pointer; }
+    #pagain .answers:hover {
+      color: #2d9922; }
+
+.highlighted {
+  background-color: #a5ea9e;
+  opacity: 0.8; }
+
+/*# sourceMappingURL=style.css.map */

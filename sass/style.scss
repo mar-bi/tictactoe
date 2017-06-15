@@ -1,0 +1,234 @@
+//Variables
+$bord-color-out: #d9d3dd;
+$bord-color-in: #f3f2f7;
+$play-red: #ce2635;
+$play-gray: #424146;
+$border-gray: #474747;
+$funnygreen: #39c32b;  
+
+
+$width: 400px;
+$widthsmall: 280px;
+$smallscreen: 420px;
+
+//mixins
+@mixin border($width, $bord-color, $radius:0) {
+	border: {
+		color: $bord-color;
+		width: $width;
+		style: solid;
+	};
+	border-radius: $radius;
+}
+
+@mixin noborder($side){
+	//$border: "border-" + $side + '-style';  
+	border-#{$side}-style: none;
+}
+
+@mixin bg-gradient($colorin, $colorout, $shape: circle) {
+	background: $colorout; /* For browsers that do not support gradients */
+  	background: -webkit-radial-gradient($shape, $colorin, $colorout); /* Safari */
+  	background: -o-radial-gradient($shape, $colorin, $colorout); /* Opera 11.6 to 12.0 */
+  	background: -moz-radial-gradient($shape, $colorin, $colorout); /* Firefox 3.6 to 15 */
+  	background: radial-gradient($shape, $colorin, $colorout); /* Standard syntax */
+}
+
+@mixin boxbordercolor($light, $dark) {
+	border-top-color: $light;
+	border-right-color: $dark;
+	border-bottom-color: $dark;
+	border-left-color: $light;
+}
+
+// general style
+body{
+	font-family:  Helvetica, sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+h1 {
+	text-align: center;
+	font-size: 2em;
+	padding: 5px;
+	@media screen and (max-width: $smallscreen) {
+		font-size: 1.5em;
+		margin: 5px 0;
+	}
+}
+
+footer{
+	clear: left;
+	p{
+		text-align: center;
+		@media screen and (max-width: $smallscreen) {
+			margin: 3px 0;
+			font-size: 0.8em;
+		}
+	}
+}
+//placeholder class
+%box {
+	width: $width;
+	margin: 1em auto;
+	padding: 10px;
+	background-color: $bord-color-out;
+	@include border(1px, $bord-color-in, 3px);
+	@include boxbordercolor($bord-color-in, $bord-color-out);
+	box-shadow: 5px 5px 3px lighten($border-gray, 10%);
+	@media screen and (max-width: $smallscreen) {
+		width: $widthsmall;
+		margin: 5px auto;
+	}
+}
+
+//welcome box
+#welcome {
+	@extend %box;
+	height: 200px;
+	h2 {
+		text-align: center;
+		font-size: 1.5em;
+		color: darken($funnygreen, 10%);
+		@media screen and (max-width: $smallscreen) {
+			font-size: 1.2em;
+		}
+	}
+	h3{
+		text-align: center;
+		font-size: 1.2em;
+		@media screen and (max-width: $smallscreen) {
+			font-size: 1em;
+		}	
+	}
+	#chars {
+		width: 200px;
+		height: 80px;
+		margin: 1em auto;
+	}
+}
+
+//gameboard
+#gameboard {
+	@extend %box;
+	@include bg-gradient($bord-color-in, $bord-color-out);
+}
+
+#scores {
+	width: 80%;
+	margin: 0 auto;
+	p {
+		display: inline-block;
+		width: 29%;
+		margin: 5px;
+		text-align: center;
+		font-size: 1.2em;
+		font-weight: 600;
+		text-transform: capitalize;
+		@media screen and (max-width: $smallscreen) {
+			font-size: 1em;
+			width: 27%;
+		}
+	}
+}
+
+#message {
+	margin: 10px;
+	font-size: 1.5em;
+	font-weight: bold;
+	text-align: center;
+	color: $funnygreen;
+}
+
+#board {
+	width: 80%;
+	height: 285px;
+	margin: 1.5em auto;
+	@media screen and (max-width: $smallscreen) {
+		height: 230px;
+	}
+	.cell {
+		width: 31%;
+		height: 90px;
+		float: left;
+		@include border(3px, $border-gray);
+		@media screen and (max-width: $smallscreen) {
+			width: 29%;
+			height: 70px;
+		}
+	}
+	#cell-7, #cell-8, #cell-9 {
+		@include noborder(top);
+	}
+
+	#cell-1, #cell-2, #cell-3 {
+		@include noborder(bottom);	
+	}
+
+	#cell-1, #cell-4, #cell-7 {
+		@include noborder(left);
+	}
+
+	#cell-3, #cell-6, #cell-9 {
+		@include noborder(right);
+	}
+}
+
+.red{
+	font-size: 5em;
+	line-height: 1;
+	font-weight: bold;
+	color: $play-red;
+	text-align: center;
+	margin: 0 auto;
+	@media screen and (max-width: $smallscreen) {
+		font-size: 4em;
+	}
+}
+
+.gray {
+	@extend .red;
+	color: $play-gray;
+}
+
+.hidden {
+	display:none;
+}
+
+.char {
+	width: 35%;
+	float: left;
+	margin: 0 15px;
+	font-size: 3em;
+	cursor: pointer;
+	&:hover {
+		color: darken($funnygreen, 10%);
+	}
+}
+
+#pagain {
+	@extend #welcome;
+	height: 150px;
+	.answers {
+		display: inline-block;
+		width: 49%;
+		text-align: center;
+		font-size: 2em;
+		font-weight: bold;
+		color: $play-gray;
+		cursor: pointer;
+		&:hover {
+			color: darken($funnygreen, 10%);
+		}
+	}
+}	
+
+.highlighted {
+	background-color: lighten($funnygreen, 30%);
+	opacity: 0.8;
+
+}
