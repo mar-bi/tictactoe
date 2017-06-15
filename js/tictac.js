@@ -57,7 +57,7 @@ $(document).ready(function(){
 				boardUpdate(index, userChar);
 				drawChar(index, userChar);
 
-				var win = isWinner2(board, compChar);
+				var win = isWinner2(board, userChar);
 				
 				if (win.length === 3) {
 					higlightWin(win);
@@ -65,6 +65,7 @@ $(document).ready(function(){
 					//update scores
 					updateScores(0, 0, 1);
 					drawScores(comp_score, ties_score, player_score);
+					//console.log(turn);
 					setTimeout(playAgain, 2*1000);
 				}
 				else if (isTie()) {
